@@ -1,0 +1,70 @@
+<!--
+        Author: Nachiket
+        Date: March 1, 2024
+    -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>W.I.S.E-Welcome|Inform|Support|Engage</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/jquery-3.5.1.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 chat-container">
+                <div class="bot-name">
+                    <h5 class="" style="color: #7618C1;" title="W.I.S.E-Welcome|Inform|Support|Engage">W.I.S.E.</h5>
+                </div>
+                <div class="card-body message-container" id="messages"> <!-- messagesDiv -->
+                    <div class="d-flex justify-content-end message-block mb-3"> <!-- MessageBlock -->
+
+                    </div>
+                    <div class="d-flex message-block mb-3"> <!-- MessageBlock -->
+
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <form id="message_input_form" enctype="multipart/form-data">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="message" id="message_input"
+                                placeholder="Type your query here . . .">
+                            <a class="btn btn-primary" id="mic_button" onclick="startSpeechRecognition()">
+                                <i class="bi bi-mic"></i>
+                            </a>
+                            <input type="file" style="display: none;" id="file_input" name="attachment"
+                                onchange="displayFileName()">
+                            <button type="button" class="btn btn-secondary btn-paperclip"
+                                onclick="document.getElementById('file_input').click()">
+                                <i class="bi bi-paperclip"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="removeAttachment()"
+                                id="removeAttachmentButton">
+                                <i class="bi bi-x"></i>
+                            </button>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary" id="sendButton"><i
+                                        class="bi bi-send-fill"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>

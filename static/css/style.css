@@ -1,0 +1,207 @@
+body {
+    background-color: #7618C1;
+}
+
+.chat-container {
+    border: #d9d9d9 1px solid;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+.message-container {
+    padding: 15px 5px;
+    height: 80vh !important;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+}
+
+.load-messages {
+    border-bottom: #d9d9d9 solid 1px !important;
+}
+
+#messages {
+    height: 400px;
+}
+
+.message-block {
+    display: flex;
+    align-items:start;
+}
+
+.message-block img {
+    margin: 5px;
+}
+
+.message-block hr {
+    margin: 0;
+}
+
+.message-card {
+    max-width: fit-content;
+    border-radius: 0 15px 15px 15px;
+    max-width: 70%;
+}
+
+.message-card-self {
+    max-width: fit-content;
+    border-radius: 15px 0 15px 15px;
+    max-width: 70%;
+}
+
+.message-card strong {
+    padding: 5px 20px;
+}
+
+.card-footer {
+    background-color: #fff;
+    margin-top: 5px;
+    position: relative;
+    bottom: 0;
+    padding: 0;
+    border: none;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+#message_input {
+    border-radius: 15px 0 0 15px;
+    padding-left: 30px;
+    height: 45px;
+    border-color: #2b2b2b;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+#message_input::placeholder {
+    color: #a5a5a5; /* Set your desired color */
+    font-weight: 100;
+}
+
+#message_input_form {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.messages {
+    border: none;
+    padding: 0;
+}
+
+#message_input:focus {
+    box-shadow: none;
+}
+
+#sendButton {
+    background-color: #2b2b2b;
+    border: #2b2b2b;
+    margin: 0;
+    border-radius: 0 15px 15px 0;
+    height: 100%;
+    padding: 0px 15px;
+    font-size: 17px;
+}
+#sendButton:hover {
+    background-color: #787878;
+}
+
+#mic_button {
+    padding-top: 9px;
+    font-size: 18px;
+    border: none;
+    background-color: #2b2b2b;
+}
+#mic_button:hover {
+    background-color: #787878;
+}
+
+.message-timestamp {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.message-card .message-timestamp {
+    text-align: right;
+}
+
+#messages .card-body {
+    padding: 5px 20px;
+}
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #787878;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: None;
+}
+
+.doc-link {
+    background-color: #fff;
+    color: #000;
+    margin: 4px 10px;
+    border-color: #d9d9d9;
+    text-align: left;
+}
+.doc-link:hover {
+    background-color: #2b2b2b;
+    border-color: #2b2b2b;
+}
+
+.time-out-questions {
+    background-color: #fff;
+    color: #000;
+    margin: 4px 2px;
+    border-color: #d9d9d9;
+}
+
+.bot-name {
+    border-bottom: 1px #d9d9d9 solid;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.filename {
+    color: #d6d6d6;
+}
+
+.btn-paperclip {
+    background-color: #2b2b2b;
+    border: none;
+}
+.btn-paperclip:hover {
+    background-color: #787878;
+}
+
+.btn-paperclip i {
+    font-size: 20px;
+}
+
+.attached-file {
+    background-color: green; /* Change this to the desired color */
+    border-color: green; /* Change this to the desired color */
+    color: white; /* Change this to the desired text color */
+}
+
+#removeAttachmentButton {
+    display: none;
+}
+
+.doc-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.listening {
+    background-color: #ff0000 !important; /* Change to your desired color */
+}
