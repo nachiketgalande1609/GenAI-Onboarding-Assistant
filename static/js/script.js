@@ -35,7 +35,7 @@ let timeoutId;
 
 // Print the welcome message
 window.onload = function () {
-    setTimeout(() => createMessageBlock(`Hello, Welcome aboard! My name is <strong class="p-0" style="color: #43766C;">W.I.S.E</strong>. I am your onboarding assistant.<br>I'm here to assist you with any questions you have. Feel free to ask anything!`, 'other'), 500);
+    setTimeout(() => createMessageBlock(`Hello, Welcome aboard! My name is <strong class="p-0" style="color: #2b2b2b;">W.I.S.E</strong>. I am your onboarding assistant.<br>I'm here to assist you with any questions you have. Feel free to ask anything!`, 'other'), 500);
 };
 
 // Start standby timer

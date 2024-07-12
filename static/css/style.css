@@ -1,5 +1,12 @@
 body {
-    background-color: #43766C;
+    /* background-color: #101720; */
+    background: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .chat-container {
@@ -7,7 +14,7 @@ body {
     background-color: #fff;
     border-radius: 20px;
     padding: 10px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    box-shadow: 0px 0px 30px rgb(162, 162, 162);
 }
 
 .message-container {
