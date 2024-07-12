@@ -1,4 +1,4 @@
-# Gen AI Conversational Assistant
+# Gen AI-Onboarding-Assistant
 <img src="./static/screenshots/snap.png">
 
 This repository contains the code for a Gen AI conversational assistant developed and deployed using Flask and OpenAI GPT-3.5 deployed on Azure. 
