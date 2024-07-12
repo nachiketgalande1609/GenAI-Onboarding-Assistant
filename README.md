@@ -47,8 +47,8 @@ The assistant is designed to facilitate project knowledge transfer for new resou
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/dwp-gen-ai-assistant.git
-   cd dwp-gen-ai-assistant
+   git clone https://github.com/nachiketgalande1609/OpenAI-Onboarding-Bot.git
+   cd OpenAI-Onboarding-Bot
    ```
 
 2. Install the required Python packages:
@@ -67,7 +67,7 @@ The assistant is designed to facilitate project knowledge transfer for new resou
 
 1. Start the Flask server:
    ```bash
-   flask run
+   python app.py
    ```
 
 2. Open your web browser and navigate to `http://localhost:5000` to interact with the assistant.
