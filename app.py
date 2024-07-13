@@ -29,60 +29,39 @@ client = AzureOpenAI(
 def home():
     return render_template('index.html')
 
-doc_num = 1
 def generate_response(prompt):
-    global doc_num
-    with open(f"response{doc_num}.txt", "r") as file:
-        # Read the contents of the file
-        content = file.readlines()
+    messages = [
+        {"role": "user","content": prompt}
+    ]
 
-        # Convert content to HTML with bullet points
-        html_response = "<ul>"
-        for line in content:
-            # Check if the line starts with a hyphen
-            if line.strip().startswith('-'):
-                html_response += "<li>{}</li>".format(line.strip()[1:].strip())
-            else:
-                # If it doesn't start with a hyphen, just add the line
-                html_response += "{}<br>".format(line.strip())
-
-        html_response += "</ul>"
-        doc_num += 1
+    try:
+        # Send the conversation prompt to OpenAI for generating a response
+        result = client.chat.completions.create(
+                messages=messages,
+                model=deployment,
+                temperature=0,
+                max_tokens=1000,
+                extra_body={
+                    "dataSources": [
+                        {
+                            "type": "AzureCognitiveSearch",
+                            "parameters": {
+                                "endpoint": SEARCH_ENDPOINT,
+                                "key": SEARCH_KEY,
+                                "indexName": INDEX_NAME,
+                                "roleInformation": "Your role is to summarize the indexed documents",
+                                "strictness": 3,
+                                "topNDocuments": 5,
+                            }
+                        }
+                    ]
+                }
+            )
+        response = result.choices[0].message.content
+        html_response = markdown(response)
+    except Exception as e:
+        html_response = "Error: " + str(e)
     return html_response
-
-# def generate_response(prompt):
-#     messages = [
-#         {"role": "user","content": prompt}
-#     ]
-
-#     try:
-#         # Send the conversation prompt to OpenAI for generating a response
-#         result = client.chat.completions.create(
-#                 messages=messages,
-#                 model=deployment,
-#                 temperature=0,
-#                 max_tokens=1000,
-#                 extra_body={
-#                     "dataSources": [
-#                         {
-#                             "type": "AzureCognitiveSearch",
-#                             "parameters": {
-#                                 "endpoint": SEARCH_ENDPOINT,
-#                                 "key": SEARCH_KEY,
-#                                 "indexName": INDEX_NAME,
-#                                 "roleInformation": "Your role is to summarize the indexed documents",
-#                                 "strictness": 3,
-#                                 "topNDocuments": 5,
-#                             }
-#                         }
-#                     ]
-#                 }
-#             )
-#         response = result.choices[0].message.content
-#         html_response = markdown(response)
-#     except Exception as e:
-#         html_response = "Error: " + str(e)
-#     return html_response
 
 def read_word_file(file_path):
     doc = Document(file_path)
@@ -91,7 +70,6 @@ def read_word_file(file_path):
     # Iterate through paragraphs in the document
     for paragraph in doc.paragraphs:
         text_content += paragraph.text + "\n"
-
     return text_content
 
 @app.route('/get_response', methods=['POST'])
